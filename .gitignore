@@ -1,0 +1,4 @@
+node_modules/
+public/dist/
+.firebaserc
+public/src/firebase/config.js
