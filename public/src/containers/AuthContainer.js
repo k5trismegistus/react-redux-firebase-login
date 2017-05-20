@@ -1,6 +1,7 @@
 import firebase from 'firebase'
 import { connect } from 'react-redux'
 import Auth from '../components/Auth'
+import { loginOk } from '../actions/auth'
 
 const mapStateToProps = (state) => {
   return {
@@ -19,14 +20,7 @@ const mapDispatchToProps = (dispatch) => {
         if (!user) {
           return
         }
-        dispatch({
-          type: "AUTH_OK",
-          payload: {
-            displayName: user.displayName,
-            email: user.email,
-            uid: user.uid
-          }
-        })
+        dispatch(loginOk(user))
       })
     }
   }

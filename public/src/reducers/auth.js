@@ -5,7 +5,7 @@ const initialState = {
 
 const auth = (state=initialState, action) => {
   switch (action.type) {
-    case "AUTH_OK": {
+    case "LOGIN_OK": {
       return Object.assign({}, state, {
         uid: action.payload.uid,
         displayName: action.payload.displayName,

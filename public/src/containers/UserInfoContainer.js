@@ -1,5 +1,6 @@
 import firebase from 'firebase'
 import { connect } from 'react-redux'
+import { logOut } from '../actions/auth'
 import UserInfo from '../components/UserInfo'
 
 const mapStateToProps = (state) => {
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     doLogout: () => {
-      dispatch({type: 'LOGOUT'})
+      firebase.auth().signOut()
+      dispatch(logOut())
     }
   }
 }
